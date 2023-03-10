@@ -1,0 +1,25 @@
+
+
+
+
+## Backend packages
+===================
+===================
+npm i express dotenv
+npm i nodemon morgan  --save-dev
+npm i http-errors
+npm i mongoose nodemailer
+npm i jsonwebtoken bcrypt crypto-js
+  
+  
+    
+    
+
+## Fronentend packages
+======================
+======================
+
+Features
+===================
+===================
+===================
