@@ -81,9 +81,9 @@ app.get("/api/v1/ping", (req, res) =>{
 });
 
 // auth routes
-app.use("/api/auth", authRouter);
+app.use("/api/v1/auth", authRouter);
 // user routes
-app.use("/api/user", userRouter);
+app.use("/api/v1/user", userRouter);
 
 
 
