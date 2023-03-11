@@ -14,10 +14,11 @@ const {
 
 
 // => route import
+const authRouter = require("./routes/authRoutes");
+const userRouter = require("./routes/userRoutes");
 
 
-
-// Catching Uncaught Exceptions
+// => Catching Uncaught Exceptions
 // this should be very top or before any code executing
 process.on("uncaughtException", (err) => {
   console.log("UNCAUGHT EXCEPTION! 💥 Shutting down...");
@@ -79,6 +80,12 @@ app.get("/api/v1/ping", (req, res) =>{
   });
 });
 
+// auth routes
+app.use("/api/auth", authRouter);
+// user routes
+app.use("/api/user", userRouter);
+
+
 
 // => error handlers middleware
 // handling unhandled routes - 404 not found handler
@@ -94,7 +101,7 @@ app.use(notFoundHandler);
 app.use(errorHandler);
 
 
-//Listen to server
+// => Listen to server
 const PORT = process.env.PORT || 4000;
 
 const server = app.listen(PORT, () => {
@@ -102,7 +109,7 @@ const server = app.listen(PORT, () => {
 });
 
 
-// Handle Errors Outside Express Unhandled Rejections
+// => Handle Errors Outside Express Unhandled Rejections
 process.on("unhandledRejection", (err) => {
   console.log("UNHANDLED REJECTION! 💥 Shutting down...");
   console.log(err.name, err.message);
